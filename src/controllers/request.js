@@ -1,7 +1,23 @@
 angular.module('finalProject')
   .controller('RequestsIndexController', RequestsIndexController)
-  // .controller('RequestsNewController', RequestsNewController)
+  .controller('RequestsNewController', RequestsNewController)
   .controller('RequestsShowController', RequestsShowController);
+
+
+
+RequestsNewController.$inject = ['Request', '$state', '$auth'];
+function RequestsNewController(Request, $state, $auth) {
+  const requestsNew = this;
+  requestsNew.request = {};
+
+  function createRequest() {
+    Request.save(requestsNew.request);
+  }
+  requestsNew.createRequest = createRequest;
+  requestsNew.isLoggedIn = $auth.isAuthenticated;
+}
+
+
 
 RequestsIndexController.$inject = ['Request'];
 function RequestsIndexController(Request) {
@@ -9,6 +25,7 @@ function RequestsIndexController(Request) {
 
   requestsIndex.all = Request.query();
 }
+
 
 RequestsShowController.$inject = ['Request', '$state', '$auth'];
 function RequestsShowController(Request, $state, $auth) {

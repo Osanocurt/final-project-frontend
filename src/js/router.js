@@ -35,7 +35,7 @@ function Router($stateProvider, $urlRouterProvider) {
       controller: 'FeedbacksIndexController as feedbacksIndex'
     })
     .state('feedbacksNew', {
-      url: '/feedbacks',
+      url: '/feedbacks/new',
       templateUrl: '/templates/feedbacksNew.html',
       controller: 'FeedbacksNewController as feedbacksNew'
     })
@@ -50,7 +50,7 @@ function Router($stateProvider, $urlRouterProvider) {
       controller: 'RequestsIndexController as requestsIndex'
     })
     .state('requestsNew', {
-      url: '/requests',
+      url: '/requests/new',
       templateUrl: '/templates/requestsNew.html',
       controller: 'RequestsNewController as requestsNew'
     })
