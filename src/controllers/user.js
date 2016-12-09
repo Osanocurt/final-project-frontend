@@ -1,8 +1,7 @@
 angular.module('finalProject')
   .controller('UsersIndexController', UsersIndexController)
   .controller('UsersShowController', UsersShowController)
-  .controller('UsersEditController', UsersEditController)
-  .controller('HomeController', HomeController);
+  .controller('UsersEditController', UsersEditController);
 
 
 UsersIndexController.$inject = ['User'];
@@ -10,12 +9,6 @@ function UsersIndexController(User) {
   const usersIndex = this;
 
   usersIndex.all = User.query();
-}
-HomeController.$inject = ['Home'];
-function HomeController(Home) {
-  const home = this;
-
-  home.all = Home.query();
 }
 
 

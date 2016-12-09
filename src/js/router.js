@@ -29,25 +29,35 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: '/templates/usersEdit.html',
       controller: 'UsersEditController as usersEdit'
     })
-    .state('home', {
-      url: '/home',
-      templateUrl: '/templates/home.html',
-      controller: 'HomeController as home'
-    })
     .state('feedbacksIndex', {
       url: '/feedbacks',
       templateUrl: '/templates/feedbacksIndex.html',
       controller: 'FeedbacksIndexController as feedbacksIndex'
+    })
+    .state('feedbacksNew', {
+      url: '/feedbacks',
+      templateUrl: '/templates/feedbacksNew.html',
+      controller: 'FeedbacksNewController as feedbacksNew'
     })
     .state('feedbacksShow', {
       url: '/feedbacks/:id',
       templateUrl: '/templates/feedbacksShow.html',
       controller: 'FeedbacksShowController as feedbacksShow'
     })
-    .state('feedbacksEdit', {
-      url: '/feedbacks/:id/edit',
-      templateUrl: '/templates/feedbacksEdit.html',
-      controller: 'FeedbacksEditController as feedbacksEdit'
+    .state('requestsIndex', {
+      url: '/requests',
+      templateUrl: '/templates/requestsIndex.html',
+      controller: 'RequestsIndexController as requestsIndex'
+    })
+    .state('requestsNew', {
+      url: '/requests',
+      templateUrl: '/templates/requestsNew.html',
+      controller: 'RequestsNewController as requestsNew'
+    })
+    .state('requestsShow', {
+      url: '/requests/:id',
+      templateUrl: '/templates/requestsShow.html',
+      controller: 'RequestsShowController as requestsShow'
     });
 
   $urlRouterProvider.otherwise('/users');

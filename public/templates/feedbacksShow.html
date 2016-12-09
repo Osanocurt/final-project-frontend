@@ -1,13 +1,15 @@
-
 <section>
   <div class="card">
-    <img class="card-img-top" ng-src="{{ usersShow.user.photo }}">
     <div class="card-block">
-      <h4 class="card-title">{{ usersShow.user.username }}</h4>
-      <p class="card-text">{{ usersShow.user.email }}</p>
-      <button ui-sref="usersEdit({ id: usersShow.user.id })" ng-if="usersShow.isCurrentUser()" class="btn btn-primary">Edit</button>
-
-      <button ui-sref="usersDelete({ id: usersShow.user.id })" ng-if="usersShow.isCurrentUser()" class="btn btn-danger">Delete</button>
+      <ul>
+        <li ng-repeat="feedback in feedbacksIndex.all" class="four columns">
+          <h4 class="card-title">id: {{ feedback.id }}</h4>
+          <h4 class="card-text">customer_id:{{ feedback.customer_id }}</h4>
+          <h4 class="card-text">runner_id: {{ feedback.runner_id }}</h4>
+          <h4 class="card-text">rating :{{ feedback.rating }}</h4>
+          <h4 class="card-text">request_id: {{ feedback.request_id }}</h4>
+        </li>
+      </ul>
     </div>
   </div>
 </section>

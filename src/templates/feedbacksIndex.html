@@ -1,13 +1,13 @@
-
-
 <section>
   <div class="card">
     <div class="card-block">
-      <ul class="row">
+      <ul>
         <li ng-repeat="feedback in feedbacksIndex.all" class="four columns">
-          <a ui-sref ="feedbacksShow({ id: feedback.id})">
-          <h2>{{ feedback.feedback.id }}</h2>
-          <h4>{{ feedback.email }}</h4></a>
+          <h4 class="card-title">id: {{ feedback.id }}</h4>
+          <h4 class="card-text">customer_id:{{ feedback.customer_id }}</h4>
+          <h4 class="card-text">runner_id: {{ feedback.runner_id }}</h4>
+          <h4 class="card-text">rating :{{ feedback.rating }}</h4>
+          <h4 class="card-text">request_id: {{ feedback.request_id }}</h4>
         </li>
       </ul>
     </div>
