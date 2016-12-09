@@ -1,0 +1,15 @@
+
+
+<section>
+  <div class="card">
+    <div class="card-block">
+      <ul class="row">
+        <li ng-repeat="feedback in feedbacksIndex.all" class="four columns">
+          <a ui-sref ="feedbacksShow({ id: feedback.id})">
+          <h2>{{ feedback.feedback.id }}</h2>
+          <h4>{{ feedback.email }}</h4></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
