@@ -2,22 +2,18 @@
   <div class="card">
     <div class="card-block">
       <img class="card-img-top" ng-src="{{ requestsShow.request.image  }}">
-      <h4 class="card-text">customer: {{ requestsShow.request.customer.full_name }}</h4>
-      <h4 class="card-text">runner: {{ requestsShow.request.runner.full_name }}</h4>
-      <h4 class="card-text">rating :{{ requestsShow.request.rating }}</h4>
-      <h4 class="card-text">request_id: {{ requestsShow.request.request_id }}</h4>
-      <h4 class="card-title">status_accepted: {{ requestsShow.request.status_accepted }}</h4>
-      <h4 class="card-text">location_lng:{{ requestsShow.request.location_lng }}</h4>
-      <h4 class="card-text">location_lat: {{ requestsShow.request.location_lat }}</h4>
-      <h4 class="card-text">destination_lat :{{ requestsShow.request.destination_lat }}</h4>
-      <h4 class="card-text">destination_lng: {{ requestsShow.request.destination_lng }}</h4>
-      <h4 class="card-text">value:{{ requestsShow.request.value }}</h4>
-      <h4 class="card-text">item_description :{{ requestsShow.request.item_description }}</h4>
-      <h4 class="card-text">earliest_pickup: {{ requestsShow.request.earliest_pickup }}</h4>
-      <h4 class="card-text">earliest_pickup:{{ requestsShow.request.earliest_pickup }}</h4>
-      <h4 class="card-text">latest_pickup: {{ requestsShow.request.latest_pickup }}</h4>
-      <h4 class="card-text">earliest_delivery :{{ requestsShow.request.earliest_delivery }}</h4>
-      <h4 class="card-text">latest_delivery: {{ requestsShow.request.latest_delivery }}</h4>
+        <span>customer: {{ requestsShow.request.customer.full_name }}</span>
+        <span>location_lng:{{ requestsShow.request.location_lng }}</span>
+        <span>location_lat: {{ requestsShow.request.location_lat }}</span>
+        <span>destination_lat :{{ requestsShow.request.destination_lat }}</span>
+        <span>destination_lng: {{ requestsShow.request.destination_lng }}</span>
+        <span>value:{{ requestsShow.request.value }}</span>
+        <span>item_description :{{ requestsShow.request.item_description }}</span>
+        <span>earliest_pickup: {{ requestsShow.request.earliest_pickup }}</span>
+        <span>earliest_pickup:{{ requestsShow.request.earliest_pickup }}</span>
+        <span>latest_pickup: {{ requestsShow.request.latest_pickup }}</span>
+        <span>earliest_delivery :{{ requestsShow.request.earliest_delivery }}</span>
+        <span>latest_delivery: {{ requestsShow.request.latest_delivery }}</span>
     </div>
   </div>
 </section>

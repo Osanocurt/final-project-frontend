@@ -1,14 +1,12 @@
 <section>
   <div class="card">
     <div class="card-block">
-      <ul class="row">
-        <li ng-repeat="user in usersIndex.all" class="four columns">
-          <a ui-sref ="usersShow({ id: user.id })">
-          <h2>{{ user.username }}</h2>
-          <h4>{{ user.email }}</h4></a>
-          <img class="card-img-top" ng-src="usersShow({ id: user.photo }}" >
-        </li>
-      </ul>
+      <span ng-repeat="user in usersIndex.all" class="four columns">
+        <a ui-sref ="usersShow({ id: user.id })">
+        <img class="img-circle" ng-src="{{ user.photo  }}" >
+        <h4>{{ user.username }}</h4>
+        <h4>{{ user.email }}</h4></a>
+      </span>
     </div>
   </div>
 </section>

@@ -1,14 +1,12 @@
 <section>
   <div class="card">
     <div class="card-block">
-      <ul>
-        <li ng-repeat="feedback in feedbacksIndex.all" class="four columns">
-          <h4 class="card-text">customer: {{ request.customer.full_name }}</h4>
-          <h4 class="card-text">runner: {{ request.runner.full_name }}</h4>
+        <span ng-repeat="feedback in feedbacksIndex.all" class="four columns">
+          <h4 class="card-text">customer:{{ request.customer.full_name }}</h4>
+          <h4 class="card-text">runner:{{ request.runner.full_name }}</h4>
           <h4 class="card-text">rating :{{ feedback.rating }}</h4>
-          <h4 class="card-text">request_id: {{ feedback.request_id }}</h4>
-        </li>
-      </ul>
+          <h4 class="card-text">comments :{{ feedback.content }}</h4>
+        </span>
     </div>
   </div>
 </section>

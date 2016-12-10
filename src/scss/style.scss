@@ -9,11 +9,20 @@ nav.navbar{
   background-color: steelblue;
   line-height: 30px;
 }
-img{
-  height: 25%;
-  width: 25%
+.img-circle {
+    border-radius: 50%;
+    height: 10%;
+    width: 10%;
 }
-map {
-  height: 100%;
+
+.rating > span:hover:before {
+   content: "\2605";
+   position: absolute;
+}
+.img-responsive {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
+/* Google maps css */
+.angular-google-map-container { height: 400px; }

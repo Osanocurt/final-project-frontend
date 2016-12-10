@@ -59,10 +59,15 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: '/templates/requestsShow.html',
       controller: 'RequestsShowController as requestsShow'
     })
-    .state('home', {
-      url: '/home',
-      templateUrl: '/templates/home.html'
+    .state('track', {
+      url: '/track',
+      templateUrl: '/templates/track.html'
+    })
+    .state('map', {
+      url: '/map',
+      templateUrl: '/templates/map.html'
     });
+
 
   $urlRouterProvider.otherwise('/users');
 }
