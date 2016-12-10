@@ -3,18 +3,16 @@
     <div class="card-block">
       <ul>
         <li ng-repeat="request in requestsIndex.all" class="four columns">
-          <h4 class="card-title">id: {{ request.id }}</h4>
-          <h4 class="card-text">customer_id:{{ request.customer_id }}</h4>
-          <h4 class="card-text">runner_id: {{ request.runner_id }}</h4>
+          <img class="card-img-top" ng-src="{{ request.image  }}" >
+          <h4 class="card-text">customer: {{ request.customer.full_name }}</h4>
+          <h4 class="card-text">runner: {{ request.runner.full_name }}</h4>
           <h4 class="card-text">rating :{{ request.rating }}</h4>
-          <h4 class="card-text">request_id: {{ request.request_id }}</h4>
-          <h4 class="card-title">status_accepted: {{ request.status_accepted }}</h4>
+          <h4 class="card-text">status: {{ request.status_accepted }}</h4>
           <h4 class="card-text">location_lng:{{ request.location_lng }}</h4>
           <h4 class="card-text">location_lat: {{ request.location_lat }}</h4>
           <h4 class="card-text">destination_lat :{{ request.destination_lat }}</h4>
           <h4 class="card-text">destination_lng: {{ request.destination_lng }}</h4>
           <h4 class="card-text">value:{{ request.value }}</h4>
-          <h4 class="card-text">image: {{ request.image }}</h4>
           <h4 class="card-text">item_description :{{ request.item_description }}</h4>
           <h4 class="card-text">earliest_pickup: {{ request.earliest_pickup }}</h4>
           <h4 class="card-text">earliest_pickup:{{ request.earliest_pickup }}</h4>
@@ -23,6 +21,8 @@
           <h4 class="card-text">latest_delivery: {{ request.latest_delivery }}</h4>
         </li>
       </ul>
+      <button class="btn btn-primary" ng-model="request.accept" >Accept Request</button>
+      <button class="btn btn-danger" ng-model="request.decline" >Decline Request</button>
     </div>
   </div>
 </section>

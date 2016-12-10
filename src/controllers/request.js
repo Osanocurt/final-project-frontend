@@ -11,13 +11,14 @@ function RequestsNewController(Request, $state, $auth) {
   requestsNew.request = {};
 
   function createRequest() {
+    console.log('bang bang bang');
+    console.log('Going to try to save: ', requestsNew.request);
     Request.save(requestsNew.request);
+    $state.go('requestsIndex');
   }
   requestsNew.createRequest = createRequest;
   requestsNew.isLoggedIn = $auth.isAuthenticated;
 }
-
-
 
 RequestsIndexController.$inject = ['Request'];
 function RequestsIndexController(Request) {

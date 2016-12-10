@@ -1,0 +1,24 @@
+<form novalidate ng-submit="feedbacksNew.createFeedback()">
+
+  <div>
+    <label>Customer_ID</label>
+    <input type="text" placeholder="customer_ID" ng-model="feedbacksNew.feedback.customer_ID">
+  </div>
+
+  <div>
+    <label>Runner_id</label>
+    <input type="text" placeholder="Runner_id" ng-model="feedbacksNew.feedback.runner_id">
+  </div>
+
+  <div>
+    <label>Rating</label>
+    <input type="text" placeholder="rating " ng-model="feedbacksNew.feedback.rating">
+  </div>
+
+  <div>
+    <label>Request_ID</label>
+    <input type="text" placeholder="Request_ID " ng-model="feedbacksNew.feedback.Request_ID">
+  </div>
+
+  <button type="submit" class="btn btn-primary"> Submit Feedback </button>
+</form>

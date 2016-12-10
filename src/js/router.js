@@ -58,6 +58,10 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/requests/:id',
       templateUrl: '/templates/requestsShow.html',
       controller: 'RequestsShowController as requestsShow'
+    })
+    .state('home', {
+      url: '/home',
+      templateUrl: '/templates/home.html'
     });
 
   $urlRouterProvider.otherwise('/users');

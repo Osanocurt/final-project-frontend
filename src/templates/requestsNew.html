@@ -1,20 +1,22 @@
-<form novalidate ng-submit="requests.submit()">
+<form novalidate ng-submit="requestsNew.createRequest()">
   <div>
     <label>ID</label>
-    <input type="text" placeholder="ID" ng-model="requests.id">
+    <input type="text" placeholder="ID" ng-model="requestsNew.request.id">
   </div>
   <div>
     <label>Customer_ID</label>
-    <input type="text" placeholder="customer_ID" ng-model="requests.customer_ID">
+    <input type="text" placeholder="customer_ID" ng-model="requestsNew.request.customer_ID">
   </div>
   <div>
     <label>Runner_id</label>
-    <input type="text" placeholder="Runner_id" ng-model="requests.runner_id">
+    <input type="text" placeholder="Runner_id" ng-model="requestsNew.request.runner_id">
   </div>
   <div>
     <label> item_description</label>
-    <input type="text" placeholder="item_description " ng-model="requests.item_description">
+    <input type="text" placeholder="item_description " ng-model="requestsNew.request.item_description">
   </div>
 
-  <button class="btn btn-primary">Request</button>
+
+  <button class="btn btn-primary">Submit Request</button>
+
 </form>
