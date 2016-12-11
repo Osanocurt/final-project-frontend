@@ -24,5 +24,9 @@ nav.navbar{
   max-width: 100%;
   height: auto;
 }
-/* Google maps css */
-.angular-google-map-container { height: 400px; }
+
+.google-map{
+  width: 400px;
+  height: 400px;
+  display: inline-block;
+}
