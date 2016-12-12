@@ -20,13 +20,20 @@ function RequestsNewController(Request, $state, $auth) {
   requestsNew.isLoggedIn = $auth.isAuthenticated;
 }
 
-RequestsIndexController.$inject = ['Request'];
-function RequestsIndexController(Request) {
+RequestsIndexController.$inject = ['Request', '$state'];
+function RequestsIndexController(Request, $state) {
   const requestsIndex = this;
 
   requestsIndex.all = Request.query();
-}
 
+  function accept(request) {
+    request.$accept(() => {
+      $state.reload();
+    });
+  }
+
+  requestsIndex.accept = accept;
+}
 
 RequestsShowController.$inject = ['Request', '$state', '$auth'];
 function RequestsShowController(Request, $state, $auth) {

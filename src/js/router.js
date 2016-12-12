@@ -4,6 +4,11 @@ angular.module('finalProject')
 Router.$inject = ['$stateProvider', '$urlRouterProvider'];
 function Router($stateProvider, $urlRouterProvider) {
   $stateProvider
+    .state('login', {
+      url: '/login',
+      templateUrl: '/templates/login.html',
+      controller: 'LoginController as login'
+    })
     .state('usersIndex', {
       url: '/users',
       templateUrl: '/templates/usersIndex.html',
@@ -13,11 +18,6 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/register',
       templateUrl: '/templates/register.html',
       controller: 'RegisterController as register'
-    })
-    .state('login', {
-      url: '/login',
-      templateUrl: '/templates/login.html',
-      controller: 'LoginController as login'
     })
     .state('usersShow', {
       url: '/users/:id',
@@ -67,7 +67,5 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/map',
       templateUrl: '/templates/map.html'
     });
-
-
   $urlRouterProvider.otherwise('/users');
 }

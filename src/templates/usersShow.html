@@ -2,14 +2,9 @@
   <div class="card">
     <div class="card-block">
       <img class="img-circle" ng-src="{{ usersShow.user.photo }}" >
-        <h4 class="card-title">{{ usersShow.user.username }}</h4>
-        <p class="card-text">{{ usersShow.user.email }}</p>
-      <div class="form-group" ng-if="usersShow.isCurrentUser()">
-        <label> <input type="checkbox" ng-if="usersShow.isCurrentUser()" ui-sref="requestsIndex">Runner</label>
-        <label> <input type="checkbox"  ng-if="usersShow.isCurrentUser()" ui-sref="requestsNew">Customer</label>
-      </div>
-      <button ui-sref="usersEdit({ id: usersShow.user.id })" ng-if="usersShow.isCurrentUser()" class="btn btn-primary">Edit</button>
-      <button ui-sref="usersDelete({ id: usersShow.user.id })" ng-if="usersShow.isCurrentUser()" class="btn btn-danger">Delete</button>
+      <h4 class="card-title">{{ usersShow.user.username }}</h4>
+      <p class="card-text">{{ usersShow.user.email }}</p>
+      <button ui-sref="requestsNew" ng-if="usersShow.isCurrentUser()" class="btn btn-primary">Request Job</button>
     </div>
   </div>
 </section>

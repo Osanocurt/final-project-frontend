@@ -1,7 +1,7 @@
 angular.module('finalProject')
   .controller('RegisterController', RegisterController)
   .controller('LoginController', LoginController);
-  
+
 
 RegisterController.$inject = ['$auth', '$state'];
 function RegisterController($auth, $state) {
@@ -28,7 +28,7 @@ function LoginController($auth, $state) {
   function submit() {
     $auth.login(login.credentials)
       .then(() => {
-        $state.go('usersIndex');
+        $state.go('usersShow');
       });
   }
 
