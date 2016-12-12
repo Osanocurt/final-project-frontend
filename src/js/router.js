@@ -20,7 +20,7 @@ function Router($stateProvider, $urlRouterProvider) {
       controller: 'RegisterController as register'
     })
     .state('usersShow', {
-      url: '/users/:id',
+      url: '/profile',
       templateUrl: '/templates/usersShow.html',
       controller: 'UsersShowController as usersShow'
     })
@@ -67,5 +67,5 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/map',
       templateUrl: '/templates/map.html'
     });
-  $urlRouterProvider.otherwise('/users');
+  $urlRouterProvider.otherwise('/login');
 }

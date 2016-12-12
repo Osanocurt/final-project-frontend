@@ -31,8 +31,15 @@ function RequestsIndexController(Request, $state) {
       $state.reload();
     });
   }
-
   requestsIndex.accept = accept;
+
+  function decline(request) {
+    request.$decline(() => {
+      $state.reload();
+    });
+  }
+  requestsIndex.decline = decline;
+
 }
 
 RequestsShowController.$inject = ['Request', '$state', '$auth'];

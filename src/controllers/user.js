@@ -14,7 +14,14 @@ function UsersIndexController(User) {
 UsersShowController.$inject = ['User', '$state', '$auth'];
 function UsersShowController(User, $state, $auth) {
   const usersShow = this;
-  usersShow.user = User.get($state.params);
+  User.get({ id: $auth.getPayload().id }, (user) => {
+    usersShow.user = user;
+
+    console.log(user);
+
+    usersShow.isRunner = user.user_type === 'Runner';
+    usersShow.isCustomer = user.user_type === 'Customer';
+  });
 
   function deleteUser() {
     usersShow.user.$remove(() => {
@@ -24,11 +31,6 @@ function UsersShowController(User, $state, $auth) {
   usersShow.delete = deleteUser;
   usersShow.isLoggedIn = $auth.isAuthenticated;
 
-  function isCurrentUser() {
-    return $auth.getPayload().id === parseFloat($state.params.id);
-  }
-
-  usersShow.isCurrentUser = isCurrentUser;
 }
 
 UsersEditController.$inject = ['User', '$state'];

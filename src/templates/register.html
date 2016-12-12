@@ -16,5 +16,15 @@
     <input type="password" placeholder="Password Confirmation" ng-model="register.user.password_confirmation">
   </div>
 
+  <div>
+    <label>
+      I am a Customer
+      <input type="radio" name="user_type" value="Customer" ng-model="register.user.user_type">
+    </label>
+    <label>
+      I am a Runner
+      <input type="radio" name="user_type" value="Runner" ng-model="register.user.user_type">
+    </label>
+  </div>
   <button class="btn btn-primary">Register</button>
 </form>

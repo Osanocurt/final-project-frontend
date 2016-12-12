@@ -28,7 +28,7 @@ function LoginController($auth, $state) {
   function submit() {
     $auth.login(login.credentials)
       .then(() => {
-        $state.go('usersShow');
+        $state.go('usersShow', {id: $auth.getPayload().id});
       });
   }
 

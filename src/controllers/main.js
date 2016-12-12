@@ -14,7 +14,7 @@ function MainController($auth, $state, $rootScope) {
   function logout() {
     $auth.logout()
     .then(() => {
-      $state.go('usersIndex');
+      $state.go('login');
     });
 
   }
