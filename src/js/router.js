@@ -44,6 +44,11 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: '/templates/feedbacksShow.html',
       controller: 'FeedbacksShowController as feedbacksShow'
     })
+    .state('feedbacksEdit', {
+      url: '/feedbacks/:id/edit',
+      templateUrl: '/templates/feedbacksShow.html',
+      controller: 'FeedbacksShowController as feedbacksShow'
+    })
     .state('requestsIndex', {
       url: '/requests',
       templateUrl: '/templates/requestsIndex.html',
