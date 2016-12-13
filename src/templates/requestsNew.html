@@ -1,13 +1,15 @@
-<google-map center="{ lat: 51.5, lng: -0.08 }"></google-map>
 
 <form novalidate ng-submit="requestsNew.createRequest()">
+  <google-map center="{ lat: 51.5, lng: -0.08 }"></google-map>
+
+  {{requestsNew.request}}
   <div>
-    <label for="location">Location</label>
-    <input type="text" id="location" name="location"  ng-model="requestsNew.request.location">
-  </div>
-  <div>
-    <label for="destination">Destination</label>
-    <input type="text" id="destination" name="destination"  ng-model="requestsNew.request.destination">
+    <input id="origin-input" ng-model="requestsNew.request.location" class="controls" type="text"
+      placeholder="Enter an origin" googleplace request="requestsNew.request">
+
+    <input id="destination-input" ng-model="requestsNew.request.destination" class="controls" type="text"
+      placeholder="Enter a destination" googleplace request="requestsNew.request">
+
   </div>
   <div>
     <label for="earliest_pickup">Earliest Pick Up</label>

@@ -30,3 +30,33 @@ nav.navbar{
   height: 400px;
   display: inline-block;
 }
+.smalltext{
+     padding-top: 5px;
+     font-size: 16px;
+ }
+.drag-drop {
+  background-color: lightyellow;
+  border-radius: 36px;
+  margin: auto;
+  width: 40%;
+  line-height: 145px;
+}
+
+.active {
+  background-color: #fcfcfc}
+  #origin-input,
+        #destination-input {
+          background-color: #fff;
+          font-family: Roboto;
+          font-size: 15px;
+          font-weight: 300;
+          margin-left: 12px;
+          padding: 0 11px 0 13px;
+          text-overflow: ellipsis;
+          width: 200px;
+        }
+
+        #origin-input:focus,
+        #destination-input:focus {
+          border-color: #4d90fe;
+        }

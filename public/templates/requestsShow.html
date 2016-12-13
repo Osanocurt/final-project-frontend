@@ -1,19 +1,17 @@
 <google-map center="{ lat: 51.5, lng: -0.08 }"></google-map>
 <section>
-  <div class="card">
-    <div class="card-block">
-      <span>customer: {{ requestsShow.request.customer.full_name }}</span>
-      <span>location_lng:{{ requestsShow.request.location_lng }}</span>
-      <span>location_lat: {{ requestsShow.request.location_lat }}</span>
-      <span>destination_lat :{{ requestsShow.request.destination_lat }}</span>
-      <span>destination_lng: {{ requestsShow.request.destination_lng }}</span>
-      <span>value:{{ requestsShow.request.value }}</span>
-      <span>item_description :{{ requestsShow.request.item_description }}</span>
-      <span>earliest_pickup: {{ requestsShow.request.earliest_pickup }}</span>
-      <span>earliest_pickup:{{ requestsShow.request.earliest_pickup }}</span>
-      <span>latest_pickup: {{ requestsShow.request.latest_pickup }}</span>
-      <span>earliest_delivery :{{ requestsShow.request.earliest_delivery }}</span>
-      <span>latest_delivery: {{ requestsShow.request.latest_delivery }}</span>
+  <div class="card" ng-repeat="job in requestsShow.user.jobs">
+    <a ui-sref="requestsShow({ id: job.id })">
+      <div class="card-block">
+      <h4>customer: {{ job.customer.full_name }}</h4>
+      <h4>location:{{ job.location }}</h4>
+      <h4>destination :{{ job.destination }}</h4>
+      <h4>value:{{ job.value }}</h4>
+      <h4>item_description :{{ job.item_description }}</h4>
+      <h4>earliest_pickup:{{ job.earliest_pickup }}</h4>
+      <h4>latest_pickup: {{ job.latest_pickup }}</h4>
+      <h4>earliest_delivery :{{ job.earliest_delivery }}</h4>
+      <h4>latest_delivery: {{ job.latest_delivery }}</h4>
     </div>
   </div>
 </section>

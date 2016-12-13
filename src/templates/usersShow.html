@@ -4,7 +4,6 @@
       <img class="img-circle" ng-src="{{ usersShow.user.photo }}" >
       <h4 class="card-title">{{ usersShow.user.username }}</h4>
       <p class="card-text">{{ usersShow.user.email }}</p>
-
       <button ui-sref="requestsNew" ng-if="usersShow.isCustomer" class="btn btn-primary">List a Job</button>
       <button ui-sref="requestsIndex" ng-if="usersShow.isRunner" class="btn btn-primary">Run a Job</button>
     </div>
@@ -18,8 +17,7 @@
       <div class="card-block">
         <h4 class="card-title">{{ job.item_description }}</h4>
         <p class="card-text">{{ job.value | currency }}</p>
-        <button class="btn btn-danger">Decline</button>
-
+        <button class="btn btn-danger" ng-click="requestsIndex.decline(decline)">Decline</button>
       </div>
     </a>
   </div>

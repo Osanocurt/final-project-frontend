@@ -1,1 +1,9 @@
-<google-map center="{ lat: 51.5, lng: -0.08 }"></google-map>
+<div>
+  <input id="origin-input" ng-model="requestsNew.request.location" class="controls" type="text"
+    placeholder="Enter an origin location" googleplace request="requestsNew.request">
+
+  <input id="destination-input" ng-model="requestsNew.request.destination" class="controls" type="text"
+    placeholder="Enter a destination location" googleplace request="requestsNew.request">
+
+    <google-map center="{ lat: 51.5, lng: -0.08 }"></google-map>
+</div>
