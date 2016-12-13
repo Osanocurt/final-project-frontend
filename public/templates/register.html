@@ -26,5 +26,12 @@
       <input type="radio" name="user_type" value="Runner" ng-model="register.user.user_type">
     </label>
   </div>
+
+  <div class="row">
+    <label>Image Upload</label>
+    <drag-drop base64="register.user.base64" src="register.user.photo"></drag-drop>
+  </div>
+
   <button class="btn btn-primary">Register</button>
 </form>
+<section>

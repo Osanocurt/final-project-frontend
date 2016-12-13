@@ -39,9 +39,7 @@ function RequestsIndexController(Request, $state) {
     });
   }
   requestsIndex.decline = decline;
-
 }
-
 RequestsShowController.$inject = ['Request', '$state', '$auth'];
 function RequestsShowController(Request, $state, $auth) {
   const requestsShow = this;

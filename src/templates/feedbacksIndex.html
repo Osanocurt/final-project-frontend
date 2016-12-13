@@ -2,8 +2,8 @@
   <div class="card">
     <div class="card-block">
         <span ng-repeat="feedback in feedbacksIndex.all" class="four columns">
-          <h4 class="card-text">customer:{{ request.customer.full_name }}</h4>
-          <h4 class="card-text">runner:{{ request.runner.full_name }}</h4>
+          <h4 class="card-text">customer:{{ feedback.customer.full_name }}</h4>
+          <h4 class="card-text">runner:{{ feedback.runner.full_name }}</h4>
           <h4 class="card-text">rating :{{ feedback.rating }}</h4>
           <h4 class="card-text">comments :{{ feedback.content }}</h4>
         </span>

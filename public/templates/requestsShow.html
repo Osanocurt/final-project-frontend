@@ -3,15 +3,15 @@
   <div class="card" ng-repeat="job in requestsShow.user.jobs">
     <a ui-sref="requestsShow({ id: job.id })">
       <div class="card-block">
-      <h4>customer: {{ job.customer.full_name }}</h4>
-      <h4>location:{{ job.location }}</h4>
-      <h4>destination :{{ job.destination }}</h4>
-      <h4>value:{{ job.value }}</h4>
-      <h4>item_description :{{ job.item_description }}</h4>
-      <h4>earliest_pickup:{{ job.earliest_pickup }}</h4>
-      <h4>latest_pickup: {{ job.latest_pickup }}</h4>
-      <h4>earliest_delivery :{{ job.earliest_delivery }}</h4>
-      <h4>latest_delivery: {{ job.latest_delivery }}</h4>
+      <h4 class="card-text">customer: {{ job.customer.full_name }}</h4>
+      <h4 class="card-text">location:{{ job.location }}</h4>
+      <h4 class="card-text">destination :{{ job.destination }}</h4>
+      <h4 class="card-text">value:{{ job.value }}</h4>
+      <h4 class="card-text">item_description :{{ job.item_description }}</h4>
+      <h4 class="card-text">earliest_pickup:{{ job.earliest_pickup }}</h4>
+      <h4 class="card-text">latest_pickup: {{ job.latest_pickup }}</h4>
+      <h4 class="card-text">earliest_delivery :{{ job.earliest_delivery }}</h4>
+      <h4 class="card-text">latest_delivery: {{ job.latest_delivery }}</h4>
     </div>
   </div>
 </section>
