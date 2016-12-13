@@ -61,7 +61,8 @@ function Router($stateProvider, $urlRouterProvider) {
     })
     .state('track', {
       url: '/track',
-      templateUrl: '/templates/track.html'
+      templateUrl: '/templates/track.html',
+      controller: 'RequestsNewController as requestsNew'
     })
     .state('map', {
       url: '/map',

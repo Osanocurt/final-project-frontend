@@ -2,7 +2,6 @@
 <form novalidate ng-submit="requestsNew.createRequest()">
   <google-map center="{ lat: 51.5, lng: -0.08 }"></google-map>
 
-  {{requestsNew.request}}
   <div>
     <input id="origin-input" ng-model="requestsNew.request.location" class="controls" type="text"
       placeholder="Enter an origin" googleplace request="requestsNew.request">

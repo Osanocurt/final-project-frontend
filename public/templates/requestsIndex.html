@@ -1,7 +1,11 @@
 <google-map center="{ lat: 51.5, lng: -0.08 }" jobs="requestsIndex.all"></google-map>
+
 <section>
   <div class="card">
-    <div ng-repeat="request in requestsIndex.all" class="four columns">
+
+    <!-- ng-hide="requestsShow.request.customer.id == requestsShow.currentUser()"> -->
+    <div ng-repeat="request in requestsIndex.all" class="four columns"
+      ng-hide="request.customer.id == requestsIndex.currentUser()">
       <img class="img-circle" ng-src="{{ request.image  }}" >
       <h4 class="card-text">customer: {{ request.customer.full_name }}</h4>
       <h4 class="card-text">runner: {{ request.runner.full_name }}</h4>
@@ -15,7 +19,10 @@
       <h4 class="card-text">latest_pickup: {{ request.latest_pickup }}</h4>
       <h4 class="card-text">earliest_delivery :{{ request.earliest_delivery }}</h4>
       <h4 class="card-text">latest_delivery: {{ request.latest_delivery }}</h4>
+      <h4 class="card-text">id: {{ request.id }}</h4>
+      <button class='btn btn-secondary' ui-sref="requestsShow({ id: request.id })">See more deatils</button>
       <button class="btn btn-primary" ng-click="requestsIndex.accept(request)">Accept Request</button>
     </div>
+    <button class='btn btn-warning' ui-sref="track">Tracking</button>
   </div>
 </section>

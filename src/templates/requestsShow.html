@@ -1,17 +1,38 @@
-<google-map center="{ lat: 51.5, lng: -0.08 }"></google-map>
-<section>
-  <div class="card" ng-repeat="job in requestsShow.user.jobs">
-    <a ui-sref="requestsShow({ id: job.id })">
-      <div class="card-block">
-      <h4 class="card-text">customer: {{ job.customer.full_name }}</h4>
-      <h4 class="card-text">location:{{ job.location }}</h4>
-      <h4 class="card-text">destination :{{ job.destination }}</h4>
-      <h4 class="card-text">value:{{ job.value }}</h4>
-      <h4 class="card-text">item_description :{{ job.item_description }}</h4>
-      <h4 class="card-text">earliest_pickup:{{ job.earliest_pickup }}</h4>
-      <h4 class="card-text">latest_pickup: {{ job.latest_pickup }}</h4>
-      <h4 class="card-text">earliest_delivery :{{ job.earliest_delivery }}</h4>
-      <h4 class="card-text">latest_delivery: {{ job.latest_delivery }}</h4>
-    </div>
+
+<google-map center="{ lat: 51.5, lng: -0.08 }" jobs="[requestsShow.request]"></google-map>
+
+<h4><strong>Customer ID: </strong>{{ requestsShow.request.customer.id }}</h4>
+<h4><strong>Customer: </strong>{{ requestsShow.request.customer.username }}</h4>
+<h4><strong>Value: </strong>{{ requestsShow.request.value }}</h4>
+<h4><strong>Description: </strong>{{ requestsShow.request.item_description }}</h4>
+<h4><strong>Earliest Pickup: </strong>{{ requestsShow.request.earliest_pickup }}</h4>
+<h4><strong>Latest Pickup: </strong>{{ requestsShow.request.latest_pickup }}</h4>
+<h4><strong>Earliest Delivery: </strong>{{ requestsShow.request.earliest_delivery }}</h4>
+<h4><strong>Latest Delivery: </strong>{{ requestsShow.request.latest_delivery }}</h4>
+<h4><strong>location_lng: </strong>{{ requestsShow.request.location_lng }}</h4>
+<h4><strong>location_lat: </strong>{{ requestsShow.request.location_lat }}</h4>
+<h4><strong>destination_lat: </strong>{{ requestsShow.request.destination_lat }}</h4>
+<h4><strong>destination_lng: </strong>{{ requestsShow.request.destination_lng }}</h4>
+
+<div ng-controller="RequestsIndexController as requestsIndex">
+  <div ng-hide="requestsShow.request.customer.id == requestsShow.currentUser()">
+    <button class="btn btn-primary" ng-click="requestsIndex.accept(requestsShow.request)">Accept Request</button>
   </div>
-</section>
+  <button class="btn btn-secondary" ui-sref="requestsIndex">Other Jobs</button>
+</div>
+<!--
+{"id":1,
+"status_accepted":null,
+"location_lng":"87",
+"location_lat":"64",
+"destination_lat":"21",
+"destination_lng":"45",
+"value":10,
+"image":"http://aldryngton.wokingham.sch.uk/wp-content/uploads/2014/11/Santa.jpg",
+"item_description":"ShoeBox",
+"earliest_pickup":"12pm",
+"latest_pickup":"3pm",
+"earliest_delivery":"4pm",
+"latest_delivery":"6pm",
+"customer":{"id":1,"username":"Mickyginger","email":"mike.hayden@ga.co","photo":null,"full_name":"Mike Hayden","address":"5 Big Chill Road","user_type":"Customer","jobs":[]},
+"runner":{"id":2,"username":"Curtis","email":"curt@ga.co","photo":null,"full_name":"Curtis Osano","address":"10 Big Chill Road","user_type":"Runner","jobs":[{"id":1,"customer_id":1,"runner_id":2,"status_accepted":null,"location_lat":"64","destination_lat":"21","value":10,"image":"http://aldryngton.wokingham.sch.uk/wp-content/uploads/2014/11/Santa.jpg","item_description":"Shoe Box","earliest_pickup":"12pm","latest_pickup":"3pm","earliest_delivery":"4pm","latest_delivery":"6pm","created_at":"2016-12-13T16:24:25.051Z","updated_at":"2016-12-13T16:24:25.051Z","location_lng":"87","destination_lng":"45"},{"id":2,"customer_id":3,"runner_id":2,"status_accepted":null,"location_lat":"51.305608","destination_lat":"40.33564829999999","value":null,"image":null,"item_description":null,"earliest_pickup":null,"latest_pickup":null,"earliest_delivery":null,"latest_delivery":null,"created_at":"2016-12-13T16:41:10.948Z","updated_at":"2016-12-13T16:52:21.931Z","location_lng":"-0.729090000000042","destination_lng":"-75.92687469999998"},{"id":3,"customer_id":3,"runner_id":2,"status_accepted":null,"location_lat":"51.5073509","destination_lat":"51.2787075","value":2,"image":null,"item_description":"2","earliest_pickup":"2","latest_pickup":"2","earliest_delivery":"2","latest_delivery":"2","created_at":"2016-12-13T17:08:16.269Z","updated_at":"2016-12-13T17:15:44.277Z","location_lng":"-0.12775829999998223","destination_lng":"0.5217254000000366"}]}} -->
