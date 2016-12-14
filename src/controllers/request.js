@@ -27,32 +27,46 @@ function RequestsNewController(Request, $state, $auth) {
 RequestsIndexController.$inject = ['Request', '$state', '$auth'];
 function RequestsIndexController(Request, $state, $auth) {
   const requestsIndex = this;
+  const currentUserId = $auth.getPayload().id;
 
   requestsIndex.all = Request.query();
 
+  function canShowAcceptButton(request) {
+    return request.customer.id !== currentUserId && !request.job_accepted;
+  }
+  requestsIndex.canShowAcceptButton = canShowAcceptButton;
+
   function accept(request) {
-    request.$accept(() => {
-      console.log(request.id + ' was accepted');
-      $state.reload();
+    Request.accept({id: request.id}, (requestAccepted) => {
+      console.log(requestAccepted.id + ' was accepted');
+      requestsIndex.all = Request.query();
     });
   }
   requestsIndex.accept = accept;
 
-  function decline(request) {
-    request.$decline(() => {
-      console.log(decline.id + ' was declined');
-      $state.reload();
+  function canShowDeliverButton(request) {
+    console.log('canShowDeliverButton: request:', request);
+    return request.customer.id !== currentUserId &&
+      request.job_accepted &&
+      !request.delivered &&
+      request.runner &&
+      request.runner.id === currentUserId;
+  }
+  requestsIndex.canShowDeliverButton = canShowDeliverButton;
+
+  function deliver(request) {
+    Request.deliver({ id: request.id}, (deliveredRequest) => {
+      console.log('request delivered:', deliveredRequest);
+      requestsIndex.all = Request.query();
     });
   }
-  requestsIndex.decline = decline;
+  requestsIndex.deliver = deliver;
 
-  function currentUser() {
-    return $auth.getPayload().id;
+  function canShowFeedbackButton(request) {
+    return request.customer.id === currentUserId && request.delivered;
   }
-  requestsIndex.currentUser = currentUser;
-
+  requestsIndex.canShowFeedbackButton = canShowFeedbackButton;
 }
-
 
 RequestsShowController.$inject = ['Request', '$state', '$auth'];
 function RequestsShowController(Request, $state, $auth) {
@@ -67,8 +81,10 @@ function RequestsShowController(Request, $state, $auth) {
   }
 
   function currentUser() {
+    console.log('RequestsShowController: $auth.getPayload():', $auth.getPayload());
     return $auth.getPayload().id;
   }
+
   requestsShow.currentUser = currentUser;
   requestsShow.isCurrentRequest = isCurrentRequest;
 

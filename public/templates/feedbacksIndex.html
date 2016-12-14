@@ -6,10 +6,11 @@
           <h4 class="card-text">runner:{{ feedback.runner.full_name }}</h4>
           <h4 class="card-text">rating :{{ feedback.rating }}</h4>
           <h4 class="card-text">comments :{{ feedback.content }}</h4>
-
-          <button type="feedbacksEdit" class="btn btn-primary"> Edit Feedback </button>
-
         </span>
     </div>
   </div>
+
+  <button class="btn btn-primary" ui-sref="usersShow">Would You Like To List Another Job?</button>
+
+  <button class="btn btn-secondary" ui-sref="usersShow">Would You Like Another Job?</button>
 </section>

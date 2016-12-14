@@ -9,7 +9,9 @@ angular.module('finalProject')
 FeedbacksNewController.$inject = ['Feedback', '$state', '$auth'];
 function FeedbacksNewController(Feedback, $state, $auth) {
   const feedbacksNew = this;
-  feedbacksNew.feedback = {};
+  feedbacksNew.feedback = {
+    runner_id: $state.params.runnerId
+  };
 
   function createFeedback() {
     console.log('Going to try to save: ', feedbacksNew.feedback);

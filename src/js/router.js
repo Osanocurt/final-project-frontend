@@ -35,7 +35,7 @@ function Router($stateProvider, $urlRouterProvider) {
       controller: 'FeedbacksIndexController as feedbacksIndex'
     })
     .state('feedbacksNew', {
-      url: '/feedbacks/new',
+      url: '/feedbacks/new/:runnerId',
       templateUrl: '/templates/feedbacksNew.html',
       controller: 'FeedbacksNewController as feedbacksNew'
     })
@@ -46,8 +46,8 @@ function Router($stateProvider, $urlRouterProvider) {
     })
     .state('feedbacksEdit', {
       url: '/feedbacks/:id/edit',
-      templateUrl: '/templates/feedbacksShow.html',
-      controller: 'FeedbacksShowController as feedbacksShow'
+      templateUrl: '/templates/feedbacksEdit.html',
+      controller: 'FeedbacksEditController as feedbacksEdit'
     })
     .state('requestsIndex', {
       url: '/requests',
@@ -64,14 +64,11 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: '/templates/requestsShow.html',
       controller: 'RequestsShowController as requestsShow'
     })
-    .state('track', {
-      url: '/track',
-      templateUrl: '/templates/track.html',
-      controller: 'RequestsNewController as requestsNew'
-    })
-    .state('map', {
-      url: '/map',
-      templateUrl: '/templates/map.html'
+    .state('status', {
+      url: '/status',
+      templateUrl: '/templates/status.html',
+      controller: 'StatusController as status'
+
     });
   $urlRouterProvider.otherwise('/login');
 }
