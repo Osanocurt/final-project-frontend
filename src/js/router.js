@@ -4,6 +4,11 @@ angular.module('finalProject')
 Router.$inject = ['$stateProvider', '$urlRouterProvider'];
 function Router($stateProvider, $urlRouterProvider) {
   $stateProvider
+
+  .state('landing', {
+    url: '/',
+    templateUrl: '/templates/landing.html'
+  })
     .state('login', {
       url: '/login',
       templateUrl: '/templates/login.html',
@@ -20,7 +25,7 @@ function Router($stateProvider, $urlRouterProvider) {
       controller: 'RegisterController as register'
     })
     .state('usersShow', {
-      url: '/profile',
+      url: '/profile/:id',
       templateUrl: '/templates/usersShow.html',
       controller: 'UsersShowController as usersShow'
     })
@@ -35,7 +40,7 @@ function Router($stateProvider, $urlRouterProvider) {
       controller: 'FeedbacksIndexController as feedbacksIndex'
     })
     .state('feedbacksNew', {
-      url: '/feedbacks/new/:runnerId',
+      url: '/feedbacks/new/:requestId/:runnerId',
       templateUrl: '/templates/feedbacksNew.html',
       controller: 'FeedbacksNewController as feedbacksNew'
     })
@@ -63,12 +68,7 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/requests/:id',
       templateUrl: '/templates/requestsShow.html',
       controller: 'RequestsShowController as requestsShow'
-    })
-    .state('status', {
-      url: '/status',
-      templateUrl: '/templates/status.html',
-      controller: 'StatusController as status'
 
     });
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/register');
 }

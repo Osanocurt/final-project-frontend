@@ -1,15 +1,13 @@
-<form novalidate ng-submit="feedbacksNew.createFeedback()">
+<form  method="post" novalidate ng-submit="feedbacksNew.createFeedback()">
+  <h3 id="logo">Feedback</h3>
+
   <div>
     <label for="rating">Rating</label>
-    <input type="text" id="rating" name="rating" ng-model="feedbacksNew.feedback.rating">
+    <input type="text" id="rating" placeholder="Rating 1-10" name="rating" ng-model="feedbacksNew.feedback.rating">
   </div>
   <div>
     <label for="content">Comments</label>
-    <input type="text" id="content" name="content" ng-model="feedbacksNew.feedback.content">
+    <input type="text" id="content" placeholder="Comment"name="content" ng-model="feedbacksNew.feedback.content">
   </div>
-  <div class="rating" ng-model="feedbacksNew.feedback.rating">
-    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-  </div>
-
-  <button type="submit" class="btn btn-primary"> Submit Feedback </button>
+  <input type="submit" name="submit" value="Submit Feedback" />
 </form>

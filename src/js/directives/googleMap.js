@@ -19,18 +19,67 @@ function googleMap($window) {
 
       directionsDisplay = new google.maps.DirectionsRenderer();
       const map = new $window.google.maps.Map(element[0], {
-        center: $scope.center,
-        zoom: 14
+        center: { lat: 51 , lng: -0.1 },
+        scrollwheel: false,
+        zoom: 7,
+        styles: [
+          {
+            'featureType': 'all',
+            'stylers': [
+              {
+                'saturation': 0
+              },
+              {
+                'hue': '#e7ecf0'
+              }
+            ]
+          },
+          {
+            'featureType': 'road',
+            'stylers': [
+              {
+                'saturation': -70
+              }
+            ]
+          },
+          {
+            'featureType': 'transit',
+            'stylers': [
+              {
+                'visibility': 'off'
+              }
+            ]
+          },
+          {
+            'featureType': 'poi',
+            'stylers': [
+              {
+                'visibility': 'off'
+              }
+            ]
+          },
+          {
+            'featureType': 'water',
+            'stylers': [
+              {
+                'visibility': 'simplified'
+              },
+              {
+                'saturation': -60
+              }
+            ]
+          }
+        ]
       });
 
       directionsDisplay.setMap(map);
-
       let markers = [];
       function clearMarkers() {
         markers.forEach((marker) => {
           marker.setMap(null);
         });
         markers = [];
+
       }
 
       function calcRoute(origin, destination) {
@@ -70,6 +119,8 @@ function googleMap($window) {
             const contentString = `
               <p>Value: ${job.value}</p>
               <p>Earliest Pickup: ${job.earliest_pickup}</p>
+              <p>Description: ${job.item_description}</p>
+              <p>Customer: ${job.customer.username}</p>
             `;
             const infoWindow = new $window.google.maps.InfoWindow({
               content: contentString
@@ -80,7 +131,6 @@ function googleMap($window) {
     }
   };
 }
-
 googleplace.$inject = ['$window'];
 function googleplace($window) {
   return {
@@ -109,8 +159,6 @@ function googleplace($window) {
           scope.request.destination_lat = latLng.lat;
           scope.request.destination_lng = latLng.lng;
         }
-        // scope.request.lat = latLng.lat;
-        // scope.request.lng = latLng.lng;
         model.$setViewValue(element.val());
       });
     }

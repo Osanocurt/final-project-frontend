@@ -1,16 +1,15 @@
 <section>
-  <div class="card">
-    <div class="card-block">
+  <div class="" style="padding:10px;">
+    <div class="" style="padding:15px;">
         <span ng-repeat="feedback in feedbacksIndex.all" class="four columns">
-          <h4 class="card-text">customer:{{ feedback.customer.full_name }}</h4>
-          <h4 class="card-text">runner:{{ feedback.runner.full_name }}</h4>
-          <h4 class="card-text">rating :{{ feedback.rating }}</h4>
-          <h4 class="card-text">comments :{{ feedback.content }}</h4>
+          <h4><strong>Customer:</strong>{{ feedback.customer.full_name }}</h4>
+          <h4><strong>Runner:</strong>{{ feedback.runner.full_name }}</h4>
+          <h4><strong>Rating:</strong>{{ feedback.rating }}</h4>
+          <h4><strong>Comments:</strong>{{ feedback.content }}</h4>
         </span>
-    </div>
-  </div>
-
-  <button class="btn btn-primary" ui-sref="usersShow">Would You Like To List Another Job?</button>
-
-  <button class="btn btn-secondary" ui-sref="usersShow">Would You Like Another Job?</button>
+  <button class="btn btn-primary"
+   ui-sref="usersShow" ng-show="main.currentUserType !== 'Runner'">Would You Like To List Another Job?</button>
+  <button class="btn btn-primary" ui-sref="usersShow" ng-show="main.currentUserType === 'Runner'">Would You Like Another Job?</button>
+</div>
+</div>
 </section>

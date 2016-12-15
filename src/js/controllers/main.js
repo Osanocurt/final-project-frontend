@@ -11,6 +11,11 @@ function MainController($auth, $state, $rootScope) {
   main.isLoggedIn = $auth.isAuthenticated;
   main.message = null;
 
+  if($auth.isAuthenticated()) {
+    main.currentUserType = $auth.getPayload().user_type;
+    main.currentUserId = $auth.getPayload().id;
+  }
+
   function logout() {
     $auth.logout()
     .then(() => {

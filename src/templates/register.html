@@ -1,28 +1,30 @@
-<form novalidate ng-submit="register.submit()">
+<form method="post" novalidate ng-submit="register.submit()">
+  <h3 id="logo">Register </h3>
+
   <div>
     <label>Username</label>
-    <input type="text" placeholder="Username" ng-model="register.user.username">
+    <input type="text" placeholder="Username" ng-model="register.user.username" required>
   </div>
   <div>
     <label>Email</label>
-    <input type="email" placeholder="Email" ng-model="register.user.email">
+    <input type="email" placeholder="Email" ng-model="register.user.email" required>
   </div>
   <div>
     <label>Password</label>
-    <input type="password" placeholder="Password" ng-model="register.user.password">
+    <input type="password" placeholder="Password" ng-model="register.user.password" required>
   </div>
   <div>
     <label>Password Confirmation</label>
-    <input type="password" placeholder="Password Confirmation" ng-model="register.user.password_confirmation">
+    <input type="password" placeholder="Password Confirmation" ng-model="register.user.password_confirmation" required>
   </div>
 
   <div>
-    <label>
-      I am a Customer
-      <input type="radio" name="user_type" value="Customer" ng-model="register.user.user_type">
+    <label id="logo">Customer
+      <input type="radio" name="user_type" value="Customer" ng-model="register.user.user_type" required>
     </label>
-    <label>
-      I am a Runner
+  </div>
+  <div>
+      <label id="logo">Runner
       <input type="radio" name="user_type" value="Runner" ng-model="register.user.user_type">
     </label>
   </div>
@@ -32,6 +34,5 @@
     <drag-drop base64="register.user.base64" src="register.user.photo"></drag-drop>
   </div>
 
-  <button class="btn btn-primary">Register</button>
-</form>
+<input type="submit" name="submit" value="Register" /></form>
 <section>

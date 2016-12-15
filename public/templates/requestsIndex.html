@@ -1,38 +1,40 @@
+<h3 id="logo">Jobs </h3>
 <section>
-  <div class="card" ng-if="requestsIndex.all.length === 0">
+  <div ng-if="requestsIndex.all.length === 0" >
     <em>You currently have no jobs</em>
   </div>
-  <div class="card" ng-repeat="request in requestsIndex.all">
+  <div class="" ng-repeat="request in requestsIndex.all" style="padding:10px;">
+    <div class=""  style="padding:15px;">
       <google-map center="{ lat: 51.5, lng: -0.08 }" jobs="[request]"></google-map>
-      <h4><strong>Customer ID: </strong>{{ request.customer.id }}</h4>
-      <h4><strong>Customer: </strong>{{ request.customer.username }}</h4>
-      <h4><strong>Value: </strong>{{ request.value }}</h4>
-      <h4><strong>Description: </strong>{{ request.item_description }}</h4>
-      <h4><strong>Earliest Pickup: </strong>{{ request.earliest_pickup }}</h4>
-      <h4><strong>Latest Pickup: </strong>{{ request.latest_pickup }}</h4>
-      <h4><strong>Earliest Delivery: </strong>{{ request.earliest_delivery }}</h4>
-      <h4><strong>Latest Delivery: </strong>{{ request.latest_delivery }}</h4>
-      <h4><strong>location_lng: </strong>{{ request.location_lng }}</h4>
-      <h4><strong>location_lat: </strong>{{ request.location_lat }}</h4>
-      <h4><strong>destination_lat: </strong>{{ request.destination_lat }}</h4>
-      <h4><strong>destination_lng: </strong>{{ request.destination_lng }}</h4>
-      <h4><strong>Accepted? </strong>{{ request.job_accepted ? 'Yes' : 'No' }}</h4>
-      <h4><strong>Delivered? </strong>{{ request.delivered ? 'Yes' : 'No' }}</h4>
+      <h4><strong>CustomerID:</strong>{{ request.customer.id }}</h4>
+      <h4><strong>Customer:</strong>{{ request.customer.username }}</h4>
+      <h4><strong>Value:</strong>{{ request.value }}</h4>
+      <h4><strong>Description:</strong>{{ request.item_description }}</h4>
+      <h4><strong>Earliest Pickup:</strong>{{ request.earliest_pickup }}</h4>
+      <h4><strong>Latest Pickup:</strong>{{ request.latest_pickup }}</h4>
+      <h4><strong>Earliest Delivery:</strong>{{ request.earliest_delivery }}</h4>
+      <h4><strong>Latest Delivery:</strong>{{ request.latest_delivery }}</h4>
+      <h4><strong>location_lng:</strong>{{ request.location_lng }}</h4>
+      <h4><strong>location_lat:</strong>{{ request.location_lat }}</h4>
+      <h4><strong>destination_lat:</strong>{{ request.destination_lat }}</h4>
+      <h4><strong>destination_lng:</strong>{{ request.destination_lng }}</h4>
+      <h4><strong>Accepted?</strong>{{ request.job_accepted ? 'Yes' : 'No' }}</h4>
+      <h4><strong>Delivered?</strong>{{ request.delivered ? 'Yes' : 'No' }}</h4>
 
       <button
-        class="btn btn-primary"
-        ng-if="requestsIndex.canShowAcceptButton(request)"
-        ng-click="requestsIndex.accept(request)">Accept Request</button>
+      class="btn btn-primary"
+      ng-if="requestsIndex.canShowAcceptButton(request)"
+      ng-click="requestsIndex.accept(request)">Accept Request</button>
 
       <button
-        class="btn btn-primary"
-        ng-if="requestsIndex.canShowDeliverButton(request)"
-        ng-click="requestsIndex.deliver(request)">Mark as Delivered</button>
+      class="btn btn-primary"
+      ng-if="requestsIndex.canShowDeliverButton(request)"
+      ng-click="requestsIndex.deliver(request)">Mark as Delivered</button>
 
       <button
-        class="btn btn-primary"
-        ng-if="requestsIndex.canShowFeedbackButton(request)"
-        ui-sref="feedbacksNew({ runnerId: request.runner.id })">Leave Feedback</button>
+      class="btn btn-primary"
+      ng-if="requestsIndex.canShowFeedbackButton(request)"
+      ui-sref="feedbacksNew({ runnerId: request.runner.id, requestId: request.id })">Leave Feedback</button>
     </div>
   </div>
 </section>

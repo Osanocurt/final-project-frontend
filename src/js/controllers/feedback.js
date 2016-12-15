@@ -10,7 +10,8 @@ FeedbacksNewController.$inject = ['Feedback', '$state', '$auth'];
 function FeedbacksNewController(Feedback, $state, $auth) {
   const feedbacksNew = this;
   feedbacksNew.feedback = {
-    runner_id: $state.params.runnerId
+    runner_id: $state.params.runnerId,
+    request_id: $state.params.requestId
   };
 
   function createFeedback() {
@@ -28,8 +29,9 @@ function FeedbacksIndexController(Feedback) {
   const feedbacksIndex = this;
 
   feedbacksIndex.all = Feedback.query();
-}
+  console.log(feedbacksIndex.all);
 
+}
 FeedbacksShowController.$inject = ['Feedback', '$state', '$auth'];
 function FeedbacksShowController(Feedback, $state, $auth) {
   const feedbacksShow = this;

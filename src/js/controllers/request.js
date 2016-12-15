@@ -30,6 +30,7 @@ function RequestsIndexController(Request, $state, $auth) {
   const currentUserId = $auth.getPayload().id;
 
   requestsIndex.all = Request.query();
+  console.log(requestsIndex.all);
 
   function canShowAcceptButton(request) {
     return request.customer.id !== currentUserId && !request.job_accepted;
@@ -63,6 +64,7 @@ function RequestsIndexController(Request, $state, $auth) {
   requestsIndex.deliver = deliver;
 
   function canShowFeedbackButton(request) {
+    // console.log('csfb', request.customer.id, currentUserId, request.delivered);
     return request.customer.id === currentUserId && request.delivered;
   }
   requestsIndex.canShowFeedbackButton = canShowFeedbackButton;

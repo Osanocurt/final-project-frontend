@@ -1,13 +1,14 @@
 body{
   text-align: center;
   font-family: sans-serif;
-}
-label{
-  width: 100%;
+  height: calc(100vh - 54px);
+  z-index: 10;
 }
 nav.navbar{
-  background-color: steelblue;
+  background-color: #B4E1FF;
   line-height: 30px;
+  font-family: 'Inconsolata', monospace;
+
 }
 .img-circle {
     border-radius: 50%;
@@ -29,35 +30,150 @@ nav.navbar{
   width: 400px;
   height: 400px;
   display: inline-block;
+  border: 2px solid lightgrey;
+
 }
-.smalltext{
-     padding-top: 5px;
-     font-size: 16px;
- }
+
 .drag-drop {
-  background-color: lightyellow;
-  border-radius: 36px;
+  background-color: #B4E1FF;
+  border-radius: 5px;
   margin: auto;
-  width: 85px;
-  line-height: 85px;
+  width: 40%;
+  height: 40%;
+  display: block;
 }
 
 .active {
   background-color: #fcfcfc}
 
-  #origin-input,
-        #destination-input {
-          background-color: #fff;
-          font-family: Roboto;
-          font-size: 15px;
-          font-weight: 300;
-          margin-left: 12px;
-          padding: 0 11px 0 13px;
-          text-overflow: ellipsis;
-          width: 200px;
-        }
+#dragDrop{
+  display: inline-block;
 
-        #origin-input:focus,
-        #destination-input:focus {
-          border-color: #4d90fe;
-        }
+}
+  #landing {
+    background-color: steelblue;
+    background-image: url('https://s-media-cache-ak0.pinimg.com/originals/bd/6f/e5/bd6fe5fcaac110f39235829eb441ee33.gif');
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 54px);
+    position: absolute;
+    top: 54px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+// Forms pages
+@import url(http://fonts.googleapis.com/css?family=Lily+Script+One);
+
+body {
+	margin:0;
+	font-family:arial,tahoma,sans-serif;
+	font-size:12px;
+	font-weight:normal;
+	direction:ltr;
+  background:#FCF7FF;
+}
+
+form {
+	margin:10% auto 0 auto;
+	padding:30px;
+	width:400px;
+	height:auto;
+	overflow:hidden;
+	background:#FCF7FF;
+	border-radius:10px;
+}
+
+form label {
+	font-size:14px;
+	color:#FCF7FF;
+	cursor:pointer;
+}
+
+form label,
+form input {
+	float:left;
+	clear:both;
+}
+
+form input {
+	margin:15px 0;
+	padding:15px 10px;
+	width:100%;
+	outline:none;
+	border:1px solid #bbb;
+	border-radius:20px;
+	display:inline-block;
+	-webkit-box-sizing:border-box;
+	   -moz-box-sizing:border-box;
+	        box-sizing:border-box;
+    -webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+
+form input[type=text]:focus,
+form input[type="password"]:focus {
+	border-color:cornflowerblue;
+}
+
+input[type=submit] {
+	padding:15px 50px;
+	width:auto;
+	background:#ED6A5A;
+	border:none;
+	color:#FFE8D1;
+	cursor:pointer;
+	display: block;
+	float:right;
+	clear:right;
+	-webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+
+input[type=submit]:hover {
+	opacity:0.8;
+}
+
+input[type="submit"]:active {
+	opacity:0.4;
+}
+
+.forgot,
+.register {
+	margin:10px;
+	float:left;
+	clear:left;
+	display: block;
+	color:cornflowerblue;
+	text-decoration:none;
+}
+
+.forgot:hover,
+.register:hover {
+	color:darkgray;
+}
+
+#logo {
+	margin: auto;
+	width:100px;
+	font-family:'Lily Script One', cursive;
+	font-size:40px;
+	text-align:center;
+	color:lightgray;
+	-webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+
+#logo:hover {
+	color:cornflowerblue;
+}

@@ -14,7 +14,7 @@ function UsersIndexController(User) {
 UsersShowController.$inject = ['User', '$state', '$auth'];
 function UsersShowController(User, $state, $auth) {
   const usersShow = this;
-  User.get({ id: $auth.getPayload().id }, (user) => {
+  User.get({ id: $state.params.id }, (user) => {
     usersShow.user = user;
 
     console.log(user);
@@ -25,9 +25,14 @@ function UsersShowController(User, $state, $auth) {
 
   function deleteUser() {
     usersShow.user.$remove(() => {
-      $state.go('usersIndex');
+      $auth.logout()
+      .then(() => {
+        $state.go('landing');
+      });
     });
   }
+
+  usersShow.loggedInUserId = $auth.getPayload().id;
   usersShow.delete = deleteUser;
   usersShow.isLoggedIn = $auth.isAuthenticated;
 

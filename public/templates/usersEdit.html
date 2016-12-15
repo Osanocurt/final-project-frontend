@@ -1,5 +1,6 @@
 <section class="row">
-  <form ng-submit="usersEdit.update()">
+  <form method="post" ng-submit="usersEdit.update()">
+    <h3 id="logo">Edit</h3>
     <div class="twelve columns">
       <label>Username</label>
       <input type="text" name="username" placeholder="Username" ng-model="usersEdit.user.username">
@@ -8,6 +9,6 @@
       <label>Email</label>
       <input type="text" name="email" placeholder="Email" ng-model="usersEdit.user.email">
     </div>
-    <button class="btn btn-primary">Update</button>
+    <input type="submit" name="submit" value="Update" />
   </form>
 </section>

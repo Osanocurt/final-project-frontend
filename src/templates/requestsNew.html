@@ -1,7 +1,7 @@
 
-<form novalidate ng-submit="requestsNew.createRequest()">
+<form  method="post" novalidate ng-submit="requestsNew.createRequest()">
+  <h3 id="logo">Request</h3>
   <google-map center="{ lat: 51.5, lng: -0.08 }"></google-map>
-
   <div>
     <input id="origin-input" ng-model="requestsNew.request.location" class="controls" type="text"
       placeholder="Enter an origin" googleplace request="requestsNew.request">
@@ -12,27 +12,27 @@
   </div>
   <div>
     <label for="earliest_pickup">Earliest Pick Up</label>
-    <input type="text" id="earliest_pickup" name="earliest_pickup"  ng-model="requestsNew.request.earliest_pickup">
+    <input type="text" placeholder="Earliest Pick Up" id="earliest_pickup" name="earliest_pickup"  ng-model="requestsNew.request.earliest_pickup">
   </div>
   <div>
     <label for="latest_pickup">Latest Pick Up</label>
-    <input type="text" id="latest_pickup" name="latest_pickup"  ng-model="requestsNew.request.latest_pickup">
+    <input type="text"  placeholder="Latest Pick Up" id="latest_pickup" name="latest_pickup"  ng-model="requestsNew.request.latest_pickup">
   </div>
   <div>
     <label for="item_description">Item_description</label>
-    <input type="text" id="item_description" name="item_description"  ng-model="requestsNew.request.item_description">
+    <input type="text" placeholder="Item Description" id="item_description" name="item_description"  ng-model="requestsNew.request.item_description">
   </div>
   <div>
     <label for="value">Value</label>
-    <input type="text" id="value" name="value" ng-model="requestsNew.request.value">
+    <input type="text" placeholder="Value" id="value" name="value" ng-model="requestsNew.request.value">
   </div>
   <div>
     <label for="earliest_delivery">Earliest Delivery</label>
-    <input type="text" id="earliest_delivery" name="earliest_delivery"  ng-model="requestsNew.request.earliest_delivery">
+    <input type="text" placeholder="Earliest Delivery" id="earliest_delivery" name="earliest_delivery"  ng-model="requestsNew.request.earliest_delivery">
   </div>
   <div>
     <label for="latest_delivery">Latest Delivery</label>
-    <input type="text" id="latest_delivery" name="latest_delivery"  ng-model="requestsNew.request.latest_delivery">
+    <input type="text" placeholder="Latest Delivery" id="latest_delivery" name="latest_delivery"  ng-model="requestsNew.request.latest_delivery">
   </div>
-  <button class="btn btn-primary">Submit Request</button>
+  <input type="submit" name="submit" value="Create request" />
 </form>
