@@ -70,5 +70,5 @@ function Router($stateProvider, $urlRouterProvider) {
       controller: 'RequestsShowController as requestsShow'
 
     });
-  $urlRouterProvider.otherwise('/register');
+  $urlRouterProvider.otherwise('/');
 }
