@@ -1,9 +1,17 @@
 <form  method="post" novalidate ng-submit="feedbacksNew.createFeedback()">
   <h3 id="logo">Feedback</h3>
 
-  <div>
-    <label for="rating">Rating</label>
-    <input type="text" id="rating" placeholder="Rating 1-10" name="rating" ng-model="feedbacksNew.feedback.rating">
+  <div class="rating">
+    <input type='radio' name='rate' ng-model="feedbacksNew.feedback.rating" value="5" id='rating_opt5'>
+    <label for='rating_opt5'><span>one of the best!</span></label>
+    <input type='radio' name='rate' ng-model="feedbacksNew.feedback.rating" value="4" id='rating_opt4'>
+    <label for='rating_opt4'><span>amazing</span></label>
+    <input type='radio' name='rate' ng-model="feedbacksNew.feedback.rating" value="3" id='rating_opt3'>
+    <label for='rating_opt3'><span>interesting...</span></label>
+    <input type='radio' name='rate' ng-model="feedbacksNew.feedback.rating" value="2" id='rating_opt2'>
+    <label for='rating_opt2'><span>worth something</span></label>
+    <input type='radio' name='rate' ng-model="feedbacksNew.feedback.rating" value="1" id='rating_opt1'>
+    <label for='rating_opt1'><span>don't waste your time</span></label>
   </div>
   <div>
     <label for="content">Comments</label>
@@ -11,18 +19,3 @@
   </div>
   <input type="submit" name="submit" value="Submit Feedback" />
 </form>
-
-<!-- <form>
-	<div class="rating">
-		<input type='radio' name='rate' id='rating_opt5'>
-		<label for='rating_opt5'><span>one of the best!</span></label>
-		<input type='radio' name='rate' id='rating_opt4'>
-		<label for='rating_opt4'><span>amazing</span></label>
-		<input type='radio' name='rate' id='rating_opt3'>
-		<label for='rating_opt3'><span>interesting...</span></label>
-		<input type='radio' name='rate' id='rating_opt2'>
-		<label for='rating_opt2'><span>worth something</span></label>
-		<input type='radio' name='rate' id='rating_opt1'>
-		<label for='rating_opt1'><span>don't waste your time</span></label>
-	</div>
-</form> -->

@@ -198,24 +198,18 @@ input[type="submit"]:active {
 	color:cornflowerblue;
 }
 
-.button {
-  color: teal;
+.rating{ display:inline-block; font-size:0; position:relative; text-transform:capitalize; height:100px;
+	label{ display:inline-block; float:right; padding:0; font-size:50px; cursor:pointer; clear:none;
+		&::before{ content:'\2606'; display:inline-block; transition:0.2s; }
+		span{ opacity:0; position:absolute; bottom:-20px; left:0; width:100%; text-align:center; height:20px;
+		font-size:0.35em; white-space:nowrap; transition:.2s ease-out; pointer-events:none; }
+		&:hover{
+			span{ opacity:1; bottom:22px; }
+			&::before{ content:'\2605'; color:orange; opacity:.6; }
+			& ~ *::before{ content:'\2605'; color:orange; opacity:.6; }
+		}
+	}
+	input{ position:absolute; left:-24px; z-index:-1; opacity:0;
+		&:checked ~ label::before{ content:'\2605'; color:orange; }
+	}
 }
-// .rating{ display:inline-block; font-size:0; position:relative; text-transform:capitalize; height:100px;
-// 	label{ display:inline-block; float:right; padding:0; font-size:50px; cursor:pointer;
-// 		&::before{ content:'\2606'; display:inline-block; transition:0.2s; }
-// 		span{ opacity:0; position:absolute; bottom:-20px; left:0; width:100%; text-align:center; height:20px;
-// 		font-size:0.35em; white-space:nowrap; transition:.2s ease-out; pointer-events:none; }
-// 		&:hover{
-// 			span{ opacity:1; bottom:22px; }
-// 			&::before{ content:'\2605'; color:orange; opacity:.6; }
-// 			& ~ *::before{ content:'\2605'; color:orange; opacity:.6; }
-// 		}
-// 	}
-// 	input{ position:absolute; left:-24px; z-index:-1; opacity:0;
-// 		&:checked ~ label::before{ content:'\2605'; color:orange; }
-// 	}
-// }
-// /* just for the demo */
-// body{ background:#E2E1D9; text-align:center; }
-// .rating{ margin:50px auto; background:#222; border-bottom:2px solid #FFF; color:#999;  border-radius:30px; padding:10px 50px; }
