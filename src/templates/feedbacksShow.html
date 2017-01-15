@@ -1,10 +1,15 @@
 <section>
-  <div class="card" ng-repeat="feedbacksShow.user.feedback">
-    <div class="card-block">
+  <div class="container">
+  	<div class="row destacados">
+  		<div class="col-md-4">
+  <div ng-repeat="feedbacksShow.user.feedback">
+    <div>
       <h4 class="card-text">customer:{{ feedbackShow.customer.full_name }}</h4>
       <h4 class="card-text">runner:{{ feedbackShow.runner.full_name }}</h4>
       <h4 class="card-text">rating :{{ feedbackShow.rating }}</h4>
       <h4 class="card-text">comments :{{ feedbackShow.comment }}</h4>
     </div>
   </div>
+</div>
+</div>
 </section>

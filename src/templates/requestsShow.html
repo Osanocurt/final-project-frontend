@@ -1,6 +1,8 @@
-
+<section style="margin-left:20px;">
+  <div class="container">
+  	<div class="row destacados">
+  		<div class="col-md-12">
 <google-map center="{ lat: 51.5, lng: -0.08 }" jobs="[requestsShow.request]"></google-map>
-
 <div class="card" ng-repeat="request in requestsShow.id">
 <h4><strong>Customer ID: </strong>{{ request.customer.id }}</h4>
 <h4><strong>Customer: </strong>{{ request.customer.username }}</h4>
@@ -27,4 +29,8 @@
     class="btn btn-primary"
     ng-click="requestsShow.delivered()">Mark as Delivered</button>
 
-  <button class="btn btn-primary" ui-sref="requestsIndex">Other Jobs</button>
+  <button class="btn btn-primary" ui-sref="requestsIndex" style="display:block;margin-left:65vh;">Other Jobs</button>
+</div>
+</div>
+</div>
+</section>

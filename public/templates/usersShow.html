@@ -1,10 +1,9 @@
 <section>
-  <div class="card">
+  <div class="card" style="margin-top:5vh;background-color:#B4E1FF;">
     <div class="card-block">
       <img class="img-circle" ng-src="{{ usersShow.user.photo }}" >
       <h4 class="card-title">{{ usersShow.user.username }}</h4>
       <p class="card-text">{{ usersShow.user.email }}</p>
-
       <div ng-show="usersShow.user.id === usersShow.loggedInUserId">
         <button class="btn btn-warning" ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit</button>
         <button class="btn btn-danger" ng-click="usersShow.delete()">Delete</button>
@@ -19,9 +18,9 @@
 
 <section>
   <h3 id="logo">History</h3>
-  <div class="card" ng-repeat="job in usersShow.user.jobs">
+  <div class="card" ng-repeat="job in usersShow.user.jobs" style="margin-top:5vh;background-color:#B4E1FF;">
     <a ui-sref="requestsShow({ id: job.id })">
-      <div class="card-block">
+      <div class="card-block" style="margin-top:5vh;background-color:#B4E1FF;">
         <h4 class="card-title">{{ job.item_description }}</h4>
         <p class="card-text">{{ job.value | currency }}</p>
       </div>

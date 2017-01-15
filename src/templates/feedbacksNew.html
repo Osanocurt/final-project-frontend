@@ -1,7 +1,9 @@
-<form  method="post" novalidate ng-submit="feedbacksNew.createFeedback()">
-  <h3 id="logo">Feedback</h3>
-
-  <div class="rating">
+<h3 id="logo">Feedback</h3>
+<div class="container">
+	<div class="row destacados">
+		<div class="col-md-6" style="margin-left:40vh; margin-top:-9vh;">
+      <form  method="post" novalidate ng-submit="feedbacksNew.createFeedback()">
+  <div class="rating" >
     <input type='radio' name='rate' ng-model="feedbacksNew.feedback.rating" value="5" id='rating_opt5'>
     <label for='rating_opt5'><span>one of the best!</span></label>
     <input type='radio' name='rate' ng-model="feedbacksNew.feedback.rating" value="4" id='rating_opt4'>
@@ -19,3 +21,7 @@
   </div>
   <input type="submit" name="submit" value="Submit Feedback" />
 </form>
+</div>
+</div>
+</div>
+</div>

@@ -1,14 +1,16 @@
 <h3 id="logo">Jobs </h3>
-<section>
+<section style="margin-left:20px;">
+  <div class="container">
+  	<div class="row destacados">
+  		<div class="col-md-12">
   <div ng-if="requestsIndex.all.length === 0" >
     <em>You currently have no jobs</em>
   </div>
-  <div ng-repeat="request in requestsIndex.all" style="padding:10px;" class="request row">
-    <div class=""  style="padding:15px;">
-      <div class="col-lg-6 col-xs-12">
+  <div ng-repeat="request in requestsIndex.all" class="request row" style="margin:2vh;margin-left:6vh; background-color: #B4E1FF;">
+      <div class="col-lg-6" style="margin-top:10vh; float:left;">
         <google-map center="{ lat: 51.5, lng: -0.08 }" jobs="[request]"></google-map>
       </div>
-      <div class="col-lg-6 col-xs-12">
+      <div class="col-lg-6" style="float:right;">
         <h4><strong>CustomerID:</strong>{{ request.customer.id }}</h4>
         <h4><strong>Customer:</strong>{{ request.customer.username }}</h4>
         <h4><strong>Value:</strong>{{ request.value }}</h4>
@@ -39,6 +41,9 @@
       class="btn btn-primary"
       ng-if="requestsIndex.canShowFeedbackButton(request)"
       ui-sref="feedbacksNew({ runnerId: request.runner.id, requestId: request.id })">Leave Feedback</button>
-    </div>
   </div>
+</div>
+</div>
+</div>
+
 </section>

@@ -1,15 +1,16 @@
-<section>
-  <div class="" style="padding:10px;">
-    <div class="" style="padding:15px;">
-        <div ng-repeat="feedback in feedbacksIndex.all" class="four columns feedback">
-          <h4><strong>Customer: </strong>{{ feedback.customer.full_name }}</h4>
-          <h4><strong>Runner: </strong>{{ feedback.runner.full_name }}</h4>
-          <h4><strong>Rating: </strong>{{ feedback.rating }}</h4>
-          <h4><strong>Comments: </strong>{{ feedback.content }}</h4>
-        </div>
-  <button class="btn btn-primary"
-   ui-sref="usersShow({ id: main.currentUserId })" ng-show="main.currentUserType !== 'Runner'">Would You Like To List Another Job?</button>
-  <button class="btn btn-primary" ui-sref="usersShow({ id: main.currentUserId })" ng-show="main.currentUserType === 'Runner'">Would You Like Another Job?</button>
+<h3 id="logo">Feedbacks</h3>
+<div class="container">
+	<div class="row destacados">
+		<div class="col-md-6" style="margin-left:40vh; margin-top:-4vh;">
+          <div ng-repeat="feedback in feedbacksIndex.all" class="four columns feedback" style="background-color: #B4E1FF;">
+            <h4><strong>Customer: </strong>{{ feedback.customer.full_name }}</h4>
+            <h4><strong>Runner: </strong>{{ feedback.runner.full_name }}</h4>
+            <h4><strong>Rating: </strong>{{ feedback.rating }}</h4>
+            <h4><strong>Comments: </strong>{{ feedback.content }}</h4>
+          </div>
+    <button class="btn btn-primary"
+     ui-sref="usersShow({ id: main.currentUserId })" ng-show="main.currentUserType !== 'Runner'">Would You Like To List Another Job?</button>
+    <button class="btn btn-primary" ui-sref="usersShow({ id: main.currentUserId })" ng-show="main.currentUserType === 'Runner'">Would You Like Another Job?</button>
+		</div>
+  </div>
 </div>
-</div>
-</section>

@@ -1,6 +1,8 @@
-
+<h3 id="logo">Request</h3>
+<div class="container">
+  <div class="row destacados">
+    <div class="col-md-12" style="margin-top:-18vh;">
 <form  method="post" novalidate ng-submit="requestsNew.createRequest()">
-  <h3 id="logo">Request</h3>
   <google-map center="{ lat: 51.5, lng: -0.08 }"></google-map>
   <div>
     <input id="origin-input" ng-model="requestsNew.request.location" class="controls" type="text"
@@ -8,7 +10,6 @@
 
     <input id="destination-input" ng-model="requestsNew.request.destination" class="controls" type="text"
       placeholder="Enter a destination" googleplace request="requestsNew.request">
-
   </div>
   <div>
     <label for="earliest_pickup">Earliest Pick Up</label>
@@ -36,3 +37,6 @@
   </div>
   <input type="submit" name="submit" value="Create request" />
 </form>
+</div>
+</div>
+</div>
